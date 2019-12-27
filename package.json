@@ -1,0 +1,48 @@
+{
+  "name": "ivendor",
+  "version": "0.0.1-dev1",
+  "description": "A sample Node app that deploys on Platform",
+  "main": "express-server.js",
+  "scripts": {
+    "postinstall": "node version-bump.js",
+    "start": "node express-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.pie.apple.com:sal3/iVendor_NodeJS.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "api",
+    "server",
+    "example",
+    "sample"
+  ],
+  "dependencies": {
+    "@apple/appleconnect-for-node-js": "^1.0.2",
+    "@apple/idms-auth": "^5.4.0",
+    "@apple/idms-lookup": "^0.3.0",
+    "@marcom/node-appleconnect": "^2.0.2",
+    "@spg/express-apple-connect": "^2.0.1",
+    "body-parser": "^1.14.2",
+    "chartkick": "^3.0.1",
+    "collections": "^5.0.6",
+    "cookie-parser": "^1.4.3",
+    "cookieparser": "^0.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-unless": "^0.5.0",
+    "fs": "0.0.1-security",
+    "ics": "^2.10.0",
+    "mercury": "^14.1.0",
+    "mongod": "^2.0.0",
+    "mongodb": "^3.1.10",
+    "node-cron": "^2.0.3",
+    "nodemailer": "^4.7.0",
+    "path": "^0.12.7",
+    "vue": "^2.5.17",
+    "vue-chartkick": "^0.5.0",
+    "vue-server-renderer": "^2.5.17"
+  }
+}

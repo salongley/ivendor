@@ -1,0 +1,38 @@
+[
+ {"icon": "fas fa-car",
+    "description": "car"
+  },
+ {"icon": "fas fa-user",
+    "description": "user"
+  },
+ {"icon": "fas fa-user-tie",
+    "description": "user with tie"
+  },
+ {"icon": "fas fa-user-secret",
+    "description": "agent"
+  },
+ {"icon": "fas fa-briefcase",
+    "description": "briefcase"
+  },
+ {"icon": "fas fa-shield-alt",
+    "description": "shield"
+  },
+ {"icon": "fas fa-broadcast-tower",
+    "description": "broadcast tower"
+  },
+ {"icon": "fas fa-wifi",
+    "description": "wifi"
+  },
+ {"icon": "fab fa-cc-apple-pay",
+    "description": "apple pay"
+  },
+  {"icon": "fas fa-wrench",
+    "description": "wrench"
+  },
+ {"icon": "fas fa-laptop",
+    "description": "laptop"
+  },
+ {"icon": "fas fa-mobile-alt",
+    "description": "mobile phone"
+  }
+]

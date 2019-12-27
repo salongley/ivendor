@@ -1,0 +1,191 @@
+.section-title h1 {
+  font-family:"Helvetica Neue", sans-serif;
+  font-weight:300;
+}
+
+body {
+  font-family:"Helvetica Neue", Helvetica, Arial, Sans-serif;
+  font-size:0.8em;
+}
+
+#mainCountry {
+  margin-top:60px;
+}
+
+#appleCommunication {
+  margin-top:60px;
+}
+
+.h3, h3, h1, h2 {
+  font-weight:300;
+}
+
+@font-face {
+    font-family: fontAwesomeRegular;
+    src: url("fa-regular-400.woff2") format("woff2"),
+    url("fa-regular-400.woff") format("woff");
+}
+
+@font-face {
+    font-family: fontAwesomeSolid;
+    src: url("fa-solid-400.woff2") format("woff2"),
+    url("fa-solid-400.woff") format("woff");
+}
+
+@font-face {
+    font-family: fontAwesomeBrands;
+    src: url("fa-brands-400.woff2") format("woff2"),
+    url("fa-brands-400.woff") format("woff");
+}
+
+
+.awesomeRegularSelect {
+    font-family: fontAwesomeRegular;
+}
+
+.awesomeSolidSelect {
+    font-family: fontAwesomeSolid;
+}
+
+
+.vendorName {
+    font-size: 1.2em;
+    
+}
+
+.vendorInfo {
+    margin: 10px;
+   
+}
+
+.vendorDetails {
+font-size: 0.8em;
+border: 1px;
+border-style: solid;
+margin-bottom: 20px;
+padding-left: 20px;
+padding-right: 20px;
+
+}
+
+.vendorDetailsResources {
+    
+    margin-top:10px;
+}
+
+#totalcost {
+    margin: 10px;
+}
+
+
+.spaceAround {
+    margin-right:10px;
+}
+
+.blueCircle {
+    background-color:rgba(0,98,204,0.5);
+    height:20px;
+    width:20px;
+    border-radius:10px;
+    margin:auto;
+    vertical-align:middle;
+}
+
+
+.blueLine {
+    background-color:rgba(0,98,204,0.5);
+    width:10px;
+    height:80%;
+    border-radius:10px;
+    margin:auto;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    vertical-align:middle;
+    
+}
+
+.el-header, .el-footer {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 1em;
+    padding-top: 20px;
+  }
+  
+  .el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+    line-height: 200px;
+  }
+  
+  .el-main {
+    background-color: #E9EEF3;
+    color: #333;
+    text-align: center;
+    line-height: 0.9em;
+    padding-top: 0px;
+    margin:0px;
+  }
+  
+  body > .el-container {
+    margin-bottom: 40px;
+  }
+  .el-main > ul{
+      list-style-type: none; 
+      padding-left:0px;
+      line-height: 1em;
+  }
+  
+  .el-dialog > .el-container > .el-main{
+  
+      border-bottom: #000000;
+      border-style: solid;
+      border-width: 3px;
+      
+  }
+  #jobsInputModal > .el-dialog> .el-dialog__title {
+      text-align: center;
+    line-height: 1em;
+    color: blue;
+  }
+  .day{
+      border: blue;
+      border-style: solid;
+      border-width: 3px;
+      margin:2px;
+      padding: 10px;
+  }
+
+  .el-input {
+      width: 220px;
+  
+  }
+  .input-label {
+          display: inline-block;
+          width: 130px;
+          font-weight: bold;
+  }
+
+  .el-table .overdue-row {
+    background: #f37272;
+    color: #222
+  }
+  
+
+  .el-table .completed-row {
+    background: #7dc781;
+    color: #222
+  }
+
+  .el-table .draft-row {
+    background: #a3a3a3;
+    color: #222
+  }
+
+  .el-table .live-row {
+    background: #e2e2e2;
+    color: #222
+  }
+

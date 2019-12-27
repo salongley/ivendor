@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iVendor</title>
+	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.css">
+	<link rel="stylesheet" href="assets/css/jquery-ui.theme.css">
+	<link rel="stylesheet" href="assets/css/jquery.dynatable.css">
+	<link rel="stylesheet" href="assets/css/element/main.css">
+	<link rel="stylesheet" href="assets/css/element/container.css">
+	<link rel="stylesheet" href="assets/css/element/header.css">
+	<link rel="stylesheet" href="assets/css/element/footer.css">
+	<link rel="stylesheet" href="assets/css/element/table.css">
+	<link rel="stylesheet" href="assets/css/element/pagination.css">
+	<link rel="stylesheet" href="assets/css/element/date-picker.css">
+	<link rel="stylesheet" href="assets/css/element/time-picker.css">
+	<link rel="stylesheet" href="assets/css/element/time-select.css">
+	<link rel="stylesheet" href="assets/css/element/autocomplete.css">
+	<link rel="stylesheet" href="assets/css/element/checkbox.css">
+	<link rel="stylesheet" href="assets/css/element/dialog.css">
+	<link rel="stylesheet" href="assets/css/element/input.css">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body>
+
+	<div id='jobs'></div>
+
+	<!--External libraries -->
+	<script src="assets/js/libraries/moment.js" type="text/javascript"></script>
+	<script src="assets/js/libraries/jquery-3.3.1.js" type="text/javascript"></script>
+
+	<!-- Bootstrap js -->
+	<script src="assets/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+
+	<!-- VueJS -->
+	<script src="//unpkg.com/vue"></script>
+	<script src="//unpkg.com/element-ui"></script>
+	<script src="//unpkg.com/element-ui/lib/umd/locale/en.js"></script>
+	<script>
+		ELEMENT.locale(ELEMENT.lang.en)
+	</script>
+
+
+
+	<script>
+		function loadDoc() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById("jobs").innerHTML = this.responseText;
+				}
+			};
+			xhttp.open("GET", "/assets/html/jobs.html", true);
+			xhttp.send();
+		}
+
+		// var jobComplete = new Vue({
+		// 	el: "#completeJob",
+		// 	data() {
+		// 		return {
+		// 			jobToBeCompleted: {
+		// 				"_id": "5bfd244a34c76955d3cf699a",
+		// 				"jobID": "AP0123",
+		// 				"invoiceID": "1234",
+		// 				"users": [{
+		// 					"_id": "5be2b4b6d3c4d2de94c0c8c1",
+		// 					"user_id": "1",
+		// 					"name": "slongley",
+		// 					"role": "1",
+		// 					"full_name": "Steve Longley",
+		// 					"dsid": "973596310",
+		// 					"image_base64": "",
+		// 					"email": "slongley@apple.com",
+		// 					"given_name": "Steve",
+		// 					"timezone": "London",
+		// 					"contact_number": "447779856835"
+		// 				}],
+		// 				"creator": "",
+		// 				"isDraft": false,
+		// 				"status": "draft",
+		// 				"sendRecap": false,
+		// 				"vendor": "P33",
+		// 				"finalComments": "",
+		// 				"emailSent": true,
+		// 				"cancelled": false,
+		// 				"completed": true,
+		// 				"isEdited": false,
+		// 				"jobDetails": [{
+		// 					"jobDetailID": "AP0123A",
+		// 					"pickUpLocation": "London",
+		// 					"Date": "2018-11-20T00:00:00.000Z",
+		// 					"endDate": "2018-11-21T00:00:00.000Z",
+		// 					"completed": false,
+		// 					"country": "UK:Europe/London",
+		// 					"bookingComments": "",
+		// 					"resources": {
+		// 						"resourceTypeName": "Engineering (Apple Pay)",
+		// 						"isMultipleDay": true,
+		// 						"resourceElements": [{
+		// 							"elementName": "Engineer",
+		// 							"icon": "fab fa-apple-pay",
+		// 							"elementCost": 0,
+		// 							"elementCount": 1
+		// 						}, {
+		// 							"elementName": "Technician",
+		// 							"icon": "fas fa-laptop",
+		// 							"elementCost": 0,
+		// 							"elementCount": 0
+		// 						}],
+		// 						"resourceTags": []
+		// 					},
+		// 					"addOns": {
+		// 						"flightInfo": "",
+		// 						"hotelInfo": "",
+		// 						"overnightSecurity": false
+		// 					},
+		// 					"amendedDropoffTime": "21:00",
+		// 					"pickUpTime": "10:00",
+		// 					"dropOffTime": "20:00"
+		// 				}],
+		// 				"vendorComments": [],
+		// 				"appleEmails": "slongley@apple.com,slongley@apple.com",
+		// 				"vendorEmails": "linos@apple.com",
+		// 				"final comments": "",
+		// 				"creationEmailPending": null,
+		// 				"recap": null,
+		// 				"user": null
+		// 			},
+		// 			invoicesCompleteJobInputModal: true,
+		// 		}
+		// 	},
+		// 	methods: {
+		// 		closeModal: function () {
+		// 			this.invoicesCompleteJobInputModal = false;
+		// 		},
+		// 		updateJobData(job) {
+
+		// 			this.jobToBeCompleted = job;
+		// 			this.invoicesCompleteJobInputModal = true;
+		// 		},
+		// 		// confirm a job to be completed or not
+		// 		completeJob() {
+		// 			this.jobToBeCompleted.status = 'completed';
+
+		// 			axios.put("/jobs/" + this.jobToBeCompleted._id, this.jobToBeCompleted)
+		// 				.then(response => {
+		// 					this.invoicesCompleteJobInputModal = true;
+		// 				})
+		// 				.catch(function (error) {
+
+		// 					console.log(error);
+		// 				});
+		// 		},
+		// 		formatDate(date) {
+		// 			return moment(date).format("YYYY-MM-DD");
+		// 		}
+		// 	}
+		// });
+	</script>
+
+</body>
+
+</html>

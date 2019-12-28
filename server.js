@@ -66,30 +66,7 @@ app.get('/', function (request, reply) {
   reply.status(200).sendFile(path.join(__dirname + '/app/index.html'));
 });
 
-app.get('/index.1.html', function (request, reply) {
-  reply.set('Content-Type', 'text/html');
-  reply.status(200).sendFile(path.join(__dirname + '/app/index.1.html'));
-});
 
-app.get('/testing.html', function (request, reply) {
-  reply.set('Content-Type', 'text/html');
-  reply.status(200).sendFile(path.join(__dirname + '/app/testing.html'));
-});
-
-app.get('/__health', function (request, reply) {
-  reply.status(200).send('OK');
-});
-
-var port = Number(process.env.PORT_PUBLIC) || 80;
-var server = app.listen(port, "0.0.0.0", function () {
-  console.log('Express is listening on port ' + port);
-});
-
-
-
-cron.schedule("* 18 * * *", function () {
-
-});
-
+var port = Number(process.env.PORT_PUBLIC) || 8080;
 
 

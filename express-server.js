@@ -47,124 +47,14 @@ app.use('/tags/', tagRoutes);
 // required dependency
 app.use('/*', cookieParser());
 
-//UAT APPLE CONNECT
-// appId: "148544",
-// appAdminPassword: "st7b9928q7zehx9v",
-// appIdKey: "0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf"
 
-//PROD APPLE CONNECT
-// appId: "148544",
-// appAdminPassword: "st7b9928q7zehx9v",
-// appIdKey: "b1a2f62709e5157444d8810e4e3bb7215f3a7a44c9d43a0527b4b7d7e8221317"
-
-
-/*
- * This code is for Authentication with Apple Connect
- *
- *
- *
- */
-// const {
-//   APPLE_CONNECT_ENVIRONMENT,
-//   APPLE_CONNECT_MIDDLEWARE_NAME,
-//   appleConnect
-// } = require('@spg/express-apple-connect');
-
-// var unless = function (path, middleware) {
-//   return function (req, res, next) {
-//     if (path === req.path) {
-//       res.status(200).send('OK');
-// 
-//     } else {
-//       return next();
-//       //return middleware(req, res, next);
-//     }
-//   };
-// };
-// 
-// app.use(unless('/__health', authenticate));
-// 
-// 
-// setup the appleConnect middleware
-// app.use('/*', appleConnect({
-//   environment: APPLE_CONNECT_ENVIRONMENT['PROD'],
-//   appId: '148544',
-//   appAdminPassword: 'st7b9928q7zehx9v',
-//   appIdKey: 'b1a2f62709e5157444d8810e4e3bb7215f3a7a44c9d43a0527b4b7d7e8221317',
-//   baseURL: 'https://ivendor-ivendor-prod.usspk05.app.apple.com/'
-
-// }));
-
-// // setup the appleConnect middleware
-// app.use('/*', appleConnect({
-//   environment: APPLE_CONNECT_ENVIRONMENT['LOCAL'],
-//   appId: '148544',
-//   appAdminPassword: 'st7b9928q7zehx9v',
-//   appIdKey: '0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf',
-//   baseURL: 'localhost:8080'
-
-// }));
-
-// // setup the appleConnect middleware
-// app.use('/*', appleConnect({
-//   environment: APPLE_CONNECT_ENVIRONMENT['UAT'],
-//   appId: '148544',
-//   appAdminPassword: 'st7b9928q7zehx9v',
-//   appIdKey: '0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf',
-//   baseURL: 'https://ivendor-ivendor-dev.usspk05.app.apple.com/'
-// }));
-
-// // // handle authenticated requests
-// app.get('/*', (request, response) => {
-
-//   // On success, validUser and myacinfo are available on the request object.
-//   // When LOCAL, the middleware will still add the the request[APPLE_CONNECT_MIDDLEWARE_NAME]
-//   // property but the validUser, myacinfo, and ip properties will all be undefined
-//   const {
-//     myacinfo,
-//     validUser,
-//     ip
-//   } = request[APPLE_CONNECT_MIDDLEWARE_NAME];
-
-//   response.status(200).send(validUser);
-//   // ...
-
-// });
-
-// function authenticate(request, response) {
-//   const {
-//     myacinfo,
-//     details,
-//     ip
-//   } = request[APPLE_CONNECT_MIDDLEWARE_NAME];
-//   response.status(200).send(details);
-
-// }
-
-
-
-// Switch to use the correct DB for each environment
-//Set these in the rio.yml AND the apps.yml
+//Set DB path
 var baseURL = '';
-var dbName = '';
-if (process.env.NODE_ENV == 'prod') {
-  baseURL = 'https://ivendor-ivendor-prod.usspk05.app.apple.com/'
-  dbName = 'ivendor';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-} else if (process.env.NODE_ENV == 'dev') {
-  baseURL = 'https://ivendor-ivendor-dev.usspk05.app.apple.com/'
-  dbName = 'ivendor_dev';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-} else if (process.env.NODE_ENV == 'local') {
-  dbName = 'ivendor';
-  var dbUrl = "mongodb://localhost:27017";
-  baseURL = 'https://ivendor-ivendor-dev.usspk05.app.apple.com/';
 
-} else {
-  dbName = 'ivendor';
-  var dbUrl = "mongodb://localhost:27017";
-  baseURL = 'http://localhost:8080'
-}
+var  dbName = 'ivendor';
+  var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
+  baseURL = 'https://ivendor.herokuapp.com/'
+
 
 
 //generates a counter to make the invoice number

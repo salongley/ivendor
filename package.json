@@ -6,11 +6,7 @@
   "scripts": {
     "postinstall": "node version-bump.js",
     "start": "node express-server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.pie.apple.com:sal3/iVendor_NodeJS.git"
-  },
+  }
   "keywords": [
     "node",
     "express",
@@ -20,11 +16,6 @@
     "sample"
   ],
   "dependencies": {
-    "@apple/appleconnect-for-node-js": "^1.0.2",
-    "@apple/idms-auth": "^5.4.0",
-    "@apple/idms-lookup": "^0.3.0",
-    "@marcom/node-appleconnect": "^2.0.2",
-    "@spg/express-apple-connect": "^2.0.1",
     "body-parser": "^1.14.2",
     "chartkick": "^3.0.1",
     "collections": "^5.0.6",

@@ -4,7 +4,6 @@
   "description": "A sample Node app that deploys on Platform",
   "main": "express-server.js",
   "scripts": {
-    "postinstall": "node version-bump.js",
     "start": "node express-server.js"
   },
   "keywords":[],

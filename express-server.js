@@ -52,7 +52,7 @@ app.use('/*', cookieParser());
 
 var  dbName = 'ivendor';
 var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
-var baseURL = 'http://ivendor.herokuapp.com/'
+var baseURL = 'https://ivendor.herokuapp.com/'
 
 
 

@@ -9,22 +9,11 @@ var MongoClient = require('mongodb').MongoClient;
 
 
 
+//Set DB path
 
-var dbName ='';
-if(process.env.NODE_ENV == 'prod'){
-  dbName='ivendor';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-}else if (process.env.NODE_ENV == 'dev'){
-  dbName = 'ivendor_dev';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-} else if(process.env.NODE_ENV == 'local') {
-    dbName='ivendor';
-    var dbUrl = "mongodb://localhost:27017";
-
-} else {
-  dbName='ivendor';
-  var dbUrl = "mongodb://localhost:27017";
-}
+var  dbName = 'ivendor';
+var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
+var baseURL = 'https://ivendor.herokuapp.com/'
 
 
 /*

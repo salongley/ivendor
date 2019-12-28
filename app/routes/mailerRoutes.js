@@ -19,29 +19,11 @@ var jobCompleteReminder = require('../JobCompleteReminder');
 
 var cancelRequest = require('../CancelRequest');
 
+//Set DB path
 
-// Switch to use the correct DB for each environment
-//Set these in the rio.yml AND the apps.yml
-var baseURL = '';
-var dbName ='';
-if(process.env.NODE_ENV == 'prod'){
-  baseURL = 'https://ivendor-ivendor-prod.usspk05.app.apple.com/'
-  dbName='ivendor';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-}else if (process.env.NODE_ENV == 'dev'){
-  baseURL = 'https://ivendor-ivendor-dev.usspk05.app.apple.com/'
-  dbName = 'ivendor_dev';
-  dbUrl = "mongodb://port--27017.wun--usmsc01.port.ww-field-eng-qa-s01-fdb-doc-layer.pie-fdb.pie-fdb-prod.sdr.apple:27017";
-} else if(process.env.NODE_ENV == 'local') {
-    dbName='ivendor';
-    var dbUrl = "mongodb://localhost:27017";
-    baseURL = 'https://ivendor-ivendor-dev.usspk05.app.apple.com/';
-
-} else {
-  dbName='ivendor';
-  var dbUrl = "mongodb://localhost:27017";
-  baseURL = 'http://localhost:8080'
-}
+var  dbName = 'ivendor';
+var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
+var baseURL = 'https://ivendor.herokuapp.com/'
 
 //Mail routes
 //

@@ -2,71 +2,7 @@
 <html>
 
 <head>
-	<script>
-		var URL = location.href;
-
-var appleConnectURL;
-var appleConnectIdmsWebUrl;
-var appID = '';
-var appIDKey = '0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf'
-var baseURL ='';
-
-var appPassword ;
-if(URL.includes('dev')){
-
-	appIDKey = '0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf';
-	baseURL = `https://ivendor-ivendor-dev.usspk05.app.apple.com/`;
-	appleConnectURL= `https://idmsauth-uat.corp.apple.com/IDMSWebAuth/login?appIdKey=${appIDKey}&baseURL=${baseURL}`;
-	appleConnectIdmsWebUrl=`https://idmsac-uat.corp.apple.com/IDMSWebAuth/validate?`;
-	appPassword= 'st7b9928q7zehx9v';
-	checkCookie();
-
-} else if (URL.includes('prod')){
-
-	appIDKey = '0d0de74fb7d44cf2641d126167079f00f469fdb841b464fe34614e0ea2adcddf';
-	baseURL = `https://ivendor-ivendor-prod.usspk05.app.apple.com/`;
-	appleConnectURL= `https://idmsauth-uat.corp.apple.com/IDMSWebAuth/login?appIdKey=${appIDKey}&baseURL=${baseURL}`;
-	appleConnectIdmsWebUrl=`https://idmsac-uat.corp.apple.com/IDMSWebAuth/validate?`;
-	appPassword= 'st7b9928q7zehx9v';
-	checkCookie();
-}else{
-
-}
-	//appleConnectValidateURL
-+"?"+"language=UTF8&cookie="+myacinfo+
-"&appId="+appID+"&appAdminPassword="+env.getProperty(appPassword,"")+"&ip="+ipAddress+"&format=json&func=prsId;";
-
-		function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-function checkCookie() {
-	var myacinfo = getCookie("myacinfo-uat");
-	console.log(myacinfo);
-    if (myacinfo != "") {
-		appleConnectIdmsWebUrl = appleConnectIdmsWebUrl +"?"+"language=UTF8&cookie="+myacinfo+
-"&appId="+appID+"&appAdminPassword="+appPassword,+"&ip="+ipAddress+"&format=json&func=prsId;";
-		window.location.replace(appleConnectIdmsWebUrl);
-    } else {
-		window.location.replace(appleConnectURL);
-        }
-    }
 	
-
-		
-		
-		</script>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

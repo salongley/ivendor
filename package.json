@@ -6,8 +6,8 @@
   "scripts": {
     "postinstall": "node version-bump.js",
     "start": "node express-server.js"
-  }
-  "keywords": [],
+  },
+  "keywords":[],
   "dependencies": {
     "body-parser": "^1.14.2",
     "chartkick": "^3.0.1",

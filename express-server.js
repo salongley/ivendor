@@ -49,11 +49,10 @@ app.use('/*', cookieParser());
 
 
 //Set DB path
-var baseURL = '';
 
 var  dbName = 'ivendor';
-  var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
-  baseURL = 'https://ivendor.herokuapp.com/'
+var dbUrl = 'mongodb://ivendor:watryn-bimcu8-dypgyD@ds125183.mlab.com:25183/heroku_6llkbck1';
+var baseURL = 'https://ivendor.herokuapp.com/'
 
 
 
@@ -140,12 +139,11 @@ app.get('/testing.html', function (request, reply) {
   reply.status(200).sendFile(path.join(__dirname + '/app/testing.html'));
 });
 
-// Health check for PIE COMPUTE
 app.get('/__health', function (request, reply) {
   reply.status(200).send('OK');
 });
 
-var port = Number(process.env.PORT_PUBLIC) || 8080;
+var port = Number(process.env.PORT_PUBLIC) || 80;
 var server = app.listen(port, "0.0.0.0", function () {
   console.log('Express is listening on port ' + port);
 });

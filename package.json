@@ -4,7 +4,7 @@
   "description": "A sample Node app that deploys on Platform",
   "main": "express-server.js",
   "scripts": {
-    "start": "node express-server.js"
+    "start": "node server.js"
   },
   "keywords":[],
   "dependencies": {

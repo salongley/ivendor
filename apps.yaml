@@ -32,7 +32,7 @@ ivendor: # this is the application name
       startupType: service
 
       # How to start this type of process
-      command: NODE_ENV=dev node express-server.js
+      command: NODE_ENV=stag node express-server.js
       #command: NODE_ENV=prod node express-server.js
 
       # Actual number is exposed as env var: PORT_PUBLIC, PORT_ADMIN, etc.

@@ -81,6 +81,42 @@ MongoClient.connect(dbUrl, {
 
 
 
+//communication Routes
+router.route('/appleComments/:id')
+  .put(function (request, reply) {
+    var index = request.params.id;
+
+    MongoClient.connect(dbUrl, {
+      useNewUrlParser: true
+    }, function (err, db) {
+      if (err) throw err;
+      var dbo = db.db(dbName);
+      var myobj = request.body;
+      var myquery = {
+        _id: ObjectId(index)
+      };
+
+
+      var UpdatedData = {
+        $push: {
+          vendorComments: {
+            "jobID": myobj.jobID,
+            "comments": myobj.comments,
+            "date": myobj.date,
+            "authorName": myobj.authorName,
+            "icon": myobj.icon
+          }
+        }
+      };
+
+      dbo.collection("jobs").updateOne(myquery, UpdatedData, function (err, res) {
+        if (err) throw err;
+        reply.status(201).send("record updated");
+        db.close();
+      });
+    });
+
+  })
 
 
 
@@ -118,7 +154,7 @@ cron.schedule("* 18 * * *", function () {
 
 });
 
-app.listen(3128);
+
 
 
 

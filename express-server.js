@@ -143,7 +143,7 @@ app.get('/__health', function (request, reply) {
   reply.status(200).send('OK');
 });
 
-var port = Number(process.env.PORT_PUBLIC) || 8080;
+var port = Number(process.env.PORT_PUBLIC) || 80;
 var server = app.listen(port,function () {
   console.log('Express is listening on port ' + port);
 });

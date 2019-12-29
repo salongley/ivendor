@@ -58,7 +58,7 @@ var baseURL = 'https://ivendor.herokuapp.com/'
 
 //generates a counter to make the invoice number
 MongoClient.connect(dbUrl, {
-  useNewUrlParser: true
+  useNewUrlParser: true, useUnifiedTopology: true , useUnifiedTopology: true 
 }, function (err, db) {
   var dbo = db.db(dbName);
   dbo.createCollection('counters');
@@ -81,13 +81,13 @@ MongoClient.connect(dbUrl, {
 
 
 
-//communication Routes
+// //communication Routes
 router.route('/appleComments/:id')
   .put(function (request, reply) {
     var index = request.params.id;
 
     MongoClient.connect(dbUrl, {
-      useNewUrlParser: true
+      useNewUrlParser: true, useUnifiedTopology: true 
     }, function (err, db) {
       if (err) throw err;
       var dbo = db.db(dbName);
@@ -143,8 +143,8 @@ app.get('/__health', function (request, reply) {
   reply.status(200).send('OK');
 });
 
-var port = Number(process.env.PORT_PUBLIC) || 80;
-var server = app.listen(port, "0.0.0.0", function () {
+var port = Number(process.env.PORT_PUBLIC) || 8080;
+var server = app.listen(port,function () {
   console.log('Express is listening on port ' + port);
 });
 
@@ -163,7 +163,7 @@ router.route('/resetCounter/:counter')
   .put(function (request, reply) {
     var mycounter = request.params.counter;
     MongoClient.connect(dbUrl, {
-      useNewUrlParser: true
+      useNewUrlParser: true, useUnifiedTopology: true 
     }, function (err, db) {
       if (err) throw err;
       var dbo = db.db(dbName);
